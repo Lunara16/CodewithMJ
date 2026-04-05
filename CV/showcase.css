@@ -1,0 +1,611 @@
+/* ============================================================
+   showcase.css — TechApp CV Showcase
+   Standalone page; mirrors CodewithMJ design system exactly.
+   ============================================================ */
+
+:root {
+  --bg: #081018;
+  --bg-soft: #111c27;
+  --panel: rgba(16, 28, 39, 0.8);
+  --line: rgba(149, 187, 213, 0.24);
+  --text: #ecf4fa;
+  --muted: #a5bacb;
+  --brand: #ffc857;
+  --accent: #3dd6c6;
+  --danger: #ff6b6b;
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(255, 200, 87, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 4%, rgba(61, 214, 198, 0.2), transparent 32%),
+    linear-gradient(160deg, #060b12 0%, #09121d 40%, #0b1823 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Canvas background ─────────────────────────────────────── */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 107, 107, 0.2);
+  left: -80px;
+  top: 40%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: rgba(61, 214, 198, 0.18);
+  right: -100px;
+  top: 15%;
+  animation: float 13s ease-in-out infinite reverse;
+}
+
+/* ── Layout ────────────────────────────────────────────────── */
+.section {
+  width: min(1160px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 1.2rem 0;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+.eyebrow {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Syne", sans-serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  margin-top: 0.3rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+}
+
+.lede {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.03rem;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--brand), #ffb703);
+  color: #201400;
+  box-shadow: 0 10px 22px rgba(255, 200, 87, 0.35);
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+}
+
+/* ── Panel base ────────────────────────────────────────────── */
+.panel,
+.metric,
+.catalog-card,
+.hero-side,
+.role-card,
+.tech-item,
+.footer {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Nav back ──────────────────────────────────────────────── */
+.nav-bar {
+  width: min(1160px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-back:hover {
+  color: var(--accent);
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.hero-side {
+  padding: 1.1rem 1.2rem;
+}
+
+.hero-side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0;
+}
+
+.hero-side li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  display: flex;
+  gap: 0.45rem;
+}
+
+.hero-side strong {
+  color: var(--text);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.hero-side a {
+  color: var(--accent);
+}
+
+/* ── Tech badges ───────────────────────────────────────────── */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
+
+.badge {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.28rem 0.72rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.badge.accent {
+  border-color: rgba(61, 214, 198, 0.4);
+  color: var(--accent);
+}
+
+.badge.brand {
+  border-color: rgba(255, 200, 87, 0.4);
+  color: var(--brand);
+}
+
+/* ── Metrics ───────────────────────────────────────────────── */
+.metrics {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.metric {
+  text-align: center;
+  padding: 1rem;
+}
+
+.metric-num {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  font-family: "Syne", sans-serif;
+  color: var(--brand);
+}
+
+.metric-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* ── Section head ──────────────────────────────────────────── */
+.section-head {
+  margin: 2.5rem 0 1rem;
+}
+
+.section-head p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+
+/* ── Catalog / Feature grid ────────────────────────────────── */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.catalog-card {
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.catalog-card::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -50%;
+  width: 180%;
+  height: 80%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.09), transparent);
+  transform: rotate(8deg);
+  transition: transform 0.65s ease;
+}
+
+.catalog-card:hover::after {
+  transform: rotate(8deg) translateY(155%);
+}
+
+.catalog-card:hover {
+  border-color: rgba(255, 200, 87, 0.65);
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.card-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.catalog-card h3 {
+  font-size: 1.18rem;
+  margin-bottom: 0.4rem;
+}
+
+.catalog-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+/* ── Roles — horizontal scroll ─────────────────────────────── */
+.roles-scroll {
+  display: flex;
+  gap: 0.85rem;
+  overflow-x: auto;
+  padding-bottom: 0.8rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.roles-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.roles-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.roles-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.role-card {
+  min-width: 190px;
+  max-width: 210px;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.role-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.role-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.role-card p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin: 0;
+}
+
+/* ── Tech stack grid ───────────────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.85rem;
+  margin-top: 0.6rem;
+}
+
+.tech-item {
+  padding: 1rem 0.6rem;
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-item:hover {
+  border-color: rgba(61, 214, 198, 0.45);
+  transform: translateY(-3px);
+}
+
+.ticon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.tech-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ── Timeline ──────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  z-index: 0;
+}
+
+.tl-step {
+  flex: 1;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 0.4rem;
+}
+
+.tl-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), #ffb703);
+  color: #201400;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 0 18px rgba(255, 200, 87, 0.35);
+  flex-shrink: 0;
+}
+
+.tl-step h3 {
+  font-size: 0.92rem;
+  margin-bottom: 0.28rem;
+  color: var(--text);
+}
+
+.tl-step p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.footer {
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.footer-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* ── Reveal animation ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.12s;
+}
+
+.delay-2 {
+  transition-delay: 0.24s;
+}
+
+.delay-3 {
+  transition-delay: 0.36s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    width: min(1160px, calc(100% - 1.2rem));
+  }
+
+  .hero {
+    padding-top: 1.4rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Vertical timeline on mobile */
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    right: auto;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, var(--brand), var(--accent));
+  }
+
+  .tl-step {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+    padding: 0 0 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

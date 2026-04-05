@@ -1,0 +1,314 @@
+<!-- INTEGRATION NOTE
+  ════════════════════════════════════════════════════════════════════
+  HOW TO LINK THIS PAGE FROM YOUR CV (index.html)
+  ════════════════════════════════════════════════════════════════════
+  1. Place showcase.html, showcase.css, and showcase.js in the SAME
+     folder as index.html  →  CV/
+
+  2. Open index.html → find <div class="catalog-grid" id="catalog">
+     Paste the article block below anywhere inside that grid:
+
+  <article class="catalog-card reveal" data-tags="enterprise">
+    <p class="card-kicker">Personal Project · 2025</p>
+    <h3>Medical Equipment Service Management System</h3>
+    <p>Enterprise-grade ASP.NET Core 8 MVC platform for hospital equipment lifecycle management with 6-role RBAC.</p>
+    <ul>
+      <li>Stack: ASP.NET Core 8, SQL Server, EF Core, Bootstrap 4</li>
+      <li>Multi-stage approval workflow · Dropzone.js uploads · Calendar</li>
+      <li>Chart.js analytics · DataTables AJAX · Identity-based routing</li>
+    </ul>
+    <a class="btn btn-ghost" href="./showcase.html" style="margin-top:0.7rem;font-size:0.85rem;" target="_blank" rel="noreferrer">View Showcase →</a>
+  </article>
+
+  3. "enterprise" tag already exists in the CV filter buttons — no
+     changes to the filter controls are needed.
+  ════════════════════════════════════════════════════════════════════
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Equipment Service Management System | Mark Jhon Bulusan</title>
+  <meta name="description" content="Showcase of TechAppRemakeWeb — enterprise ASP.NET Core 8 MVC system for hospital equipment service lifecycle management with 6-role RBAC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="showcase.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Nav back -->
+  <nav class="nav-bar" aria-label="Page navigation">
+    <a class="nav-back" href="./index.html">← Back to CV</a>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <header class="hero section reveal">
+    <div class="hero-text">
+      <p class="eyebrow">Personal Project · ASP.NET Core 8 MVC</p>
+      <h1>Medical Equipment<br>Service Management</h1>
+      <p class="lede">
+        Enterprise-grade platform for hospital equipment service lifecycle management —
+        from the first service call through technician dispatch, multi-stage approvals,
+        to job order completion.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/Lunara16" target="_blank" rel="noreferrer">View on GitHub</a>
+        <a class="btn btn-ghost" href="./admin-demo.html" target="_blank" rel="noreferrer">Live Admin Demo →</a>
+        <a class="btn btn-ghost" href="./index.html">← Back to CV</a>
+      </div>
+      <div class="tech-badges" aria-label="Technology stack">
+        <span class="badge accent">ASP.NET Core 8</span>
+        <span class="badge accent">SQL Server</span>
+        <span class="badge accent">EF Core</span>
+        <span class="badge">Bootstrap 4</span>
+        <span class="badge">FullCalendar.js</span>
+        <span class="badge">Dropzone.js</span>
+        <span class="badge">Chart.js</span>
+        <span class="badge">DataTables.js</span>
+        <span class="badge brand">Identity RBAC</span>
+      </div>
+    </div>
+
+    <aside class="hero-side reveal delay-1" aria-label="Project quick facts">
+      <p class="eyebrow">Quick Facts</p>
+      <ul>
+        <li><strong>Type</strong>Web Application (MVC)</li>
+        <li><strong>Domain</strong>Healthcare / Field Service</li>
+        <li><strong>Roles</strong>6 (Admin → Marketing)</li>
+        <li><strong>DB Entities</strong>15 Models</li>
+        <li><strong>Controllers</strong>16</li>
+        <li><strong>Auth</strong>ASP.NET Core Identity</li>
+        <li><strong>Source</strong><a href="https://github.com/Lunara16" target="_blank" rel="noreferrer">github.com/Lunara16</a></li>
+      </ul>
+    </aside>
+  </header>
+
+  <!-- ── METRICS ───────────────────────────────────────────── -->
+  <section class="metrics section reveal delay-1" aria-label="Project metrics">
+    <article class="metric">
+      <p class="metric-num" data-target="6">0</p>
+      <p class="metric-label">User Roles</p>
+    </article>
+    <article class="metric">
+      <p class="metric-num" data-target="15">0</p>
+      <p class="metric-label">DB Entities</p>
+    </article>
+    <article class="metric">
+      <p class="metric-num" data-target="16">0</p>
+      <p class="metric-label">Controllers</p>
+    </article>
+    <article class="metric">
+      <p class="metric-num" data-target="3">0</p>
+      <p class="metric-label">Approval Stages</p>
+    </article>
+  </section>
+
+  <!-- ── FEATURE GRID ──────────────────────────────────────── -->
+  <section class="section reveal delay-2">
+    <div class="section-head">
+      <p class="eyebrow">Core Modules</p>
+      <h2>Feature Overview</h2>
+      <p>Six production-ready modules covering the complete equipment service lifecycle.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <article class="catalog-card reveal">
+        <span class="card-icon" aria-hidden="true">📋</span>
+        <p class="card-kicker">Module 01</p>
+        <h3>Call Sheet Management</h3>
+        <p>Recorders log incoming hospital service requests with equipment details, urgency, and contact info. Each call sheet triggers the entire downstream service workflow.</p>
+      </article>
+
+      <article class="catalog-card reveal delay-1">
+        <span class="card-icon" aria-hidden="true">📸</span>
+        <p class="card-kicker">Module 02</p>
+        <h3>Assessment Reports + Photo Upload</h3>
+        <p>Technicians file detailed on-site assessments — scope of work, warranty status, parts list, cost estimates — with multi-image upload powered by Dropzone.js.</p>
+      </article>
+
+      <article class="catalog-card reveal delay-2">
+        <span class="card-icon" aria-hidden="true">✅</span>
+        <p class="card-kicker">Module 03</p>
+        <h3>Multi-Role Approval Workflow</h3>
+        <p>Assessments pass through a 3-stage sign-off chain: Service Manager validates scope, Inventory Manager confirms parts availability, Marketing finalises pricing.</p>
+      </article>
+
+      <article class="catalog-card reveal">
+        <span class="card-icon" aria-hidden="true">📦</span>
+        <p class="card-kicker">Module 04</p>
+        <h3>Job Order Lifecycle</h3>
+        <p>Approved assessments become Job Orders. Managers attach Purchase Orders (or flag P.O. to Follow), assign technicians, and track work through to photo-verified completion.</p>
+      </article>
+
+      <article class="catalog-card reveal delay-1">
+        <span class="card-icon" aria-hidden="true">📅</span>
+        <p class="card-kicker">Module 05</p>
+        <h3>FullCalendar Scheduling</h3>
+        <p>Visual calendar for scheduling technician site visits and job orders. FullCalendar.js provides clear date-based dispatch management across the entire service team.</p>
+      </article>
+
+      <article class="catalog-card reveal delay-2">
+        <span class="card-icon" aria-hidden="true">📊</span>
+        <p class="card-kicker">Module 06</p>
+        <h3>Chart.js Analytics Dashboard</h3>
+        <p>Admin and Manager dashboards surface real-time charts for call sheet volume, job order status distribution, and assessment history — all driven by Chart.js.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── ROLE OVERVIEW ─────────────────────────────────────── -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Access Control</p>
+      <h2>6-Role RBAC System</h2>
+      <p>Each role lands on its own dashboard after login — redirect logic is baked into the authentication layer via ASP.NET Core Identity.</p>
+    </div>
+
+    <div class="roles-scroll" role="list" aria-label="User roles">
+      <div class="role-card reveal" role="listitem">
+        <span class="role-icon" aria-hidden="true">👑</span>
+        <h3>Admin</h3>
+        <p>Full system access. Manages all users, all modules, and system configuration.</p>
+      </div>
+      <div class="role-card reveal delay-1" role="listitem">
+        <span class="role-icon" aria-hidden="true">📞</span>
+        <h3>Recorder</h3>
+        <p>Logs incoming hospital service requests and creates Call Sheets.</p>
+      </div>
+      <div class="role-card reveal delay-2" role="listitem">
+        <span class="role-icon" aria-hidden="true">👔</span>
+        <h3>Service Manager</h3>
+        <p>Assigns technicians, approves assessments, creates and tracks Job Orders.</p>
+      </div>
+      <div class="role-card reveal" role="listitem">
+        <span class="role-icon" aria-hidden="true">🔧</span>
+        <h3>Technician</h3>
+        <p>Files Assessment Reports, uploads on-site photos, and closes Job Orders.</p>
+      </div>
+      <div class="role-card reveal delay-1" role="listitem">
+        <span class="role-icon" aria-hidden="true">📦</span>
+        <h3>Inventory Manager</h3>
+        <p>Validates parts and materials availability during the approval workflow.</p>
+      </div>
+      <div class="role-card reveal delay-2" role="listitem">
+        <span class="role-icon" aria-hidden="true">💰</span>
+        <h3>Marketing</h3>
+        <p>Handles price estimation and billing as the final approval stage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECH STACK ─────────────────────────────────────────── -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Technology</p>
+      <h2>Full-Stack Tech</h2>
+      <p>Production-grade libraries and frameworks across every layer of the application.</p>
+    </div>
+
+    <div class="tech-grid" aria-label="Technologies used">
+      <div class="tech-item reveal">
+        <span class="ticon" aria-hidden="true">⚙️</span>
+        <p>ASP.NET Core 8</p>
+      </div>
+      <div class="tech-item reveal delay-1">
+        <span class="ticon" aria-hidden="true">🗄️</span>
+        <p>SQL Server</p>
+      </div>
+      <div class="tech-item reveal delay-2">
+        <span class="ticon" aria-hidden="true">🔷</span>
+        <p>EF Core Code First</p>
+      </div>
+      <div class="tech-item reveal">
+        <span class="ticon" aria-hidden="true">🎨</span>
+        <p>Bootstrap 4</p>
+      </div>
+      <div class="tech-item reveal delay-1">
+        <span class="ticon" aria-hidden="true">🔑</span>
+        <p>ASP.NET Identity</p>
+      </div>
+      <div class="tech-item reveal delay-2">
+        <span class="ticon" aria-hidden="true">📅</span>
+        <p>FullCalendar.js</p>
+      </div>
+      <div class="tech-item reveal">
+        <span class="ticon" aria-hidden="true">📤</span>
+        <p>Dropzone.js</p>
+      </div>
+      <div class="tech-item reveal delay-1">
+        <span class="ticon" aria-hidden="true">📊</span>
+        <p>Chart.js</p>
+      </div>
+      <div class="tech-item reveal delay-2">
+        <span class="ticon" aria-hidden="true">📋</span>
+        <p>DataTables.js</p>
+      </div>
+      <div class="tech-item reveal">
+        <span class="ticon" aria-hidden="true">🎯</span>
+        <p>Ionicons</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORKFLOW TIMELINE ──────────────────────────────────── -->
+  <section class="section reveal">
+    <div class="section-head">
+      <p class="eyebrow">Service Lifecycle</p>
+      <h2>End-to-End Workflow</h2>
+      <p>Six stages from hospital call to confirmed job completion.</p>
+    </div>
+
+    <div class="timeline" role="list" aria-label="Service workflow steps">
+      <div class="tl-step reveal" role="listitem">
+        <div class="tl-num" aria-label="Step 1">1</div>
+        <h3>Hospital Call</h3>
+        <p>Hospital contacts the service company about faulty equipment</p>
+      </div>
+      <div class="tl-step reveal delay-1" role="listitem">
+        <div class="tl-num" aria-label="Step 2">2</div>
+        <h3>Call Sheet</h3>
+        <p>Recorder logs equipment, hospital details, and urgency level</p>
+      </div>
+      <div class="tl-step reveal delay-2" role="listitem">
+        <div class="tl-num" aria-label="Step 3">3</div>
+        <h3>Site Assessment</h3>
+        <p>Technician visits hospital, files report with scope, parts, and photos</p>
+      </div>
+      <div class="tl-step reveal" role="listitem">
+        <div class="tl-num" aria-label="Step 4">4</div>
+        <h3>3-Stage Approval</h3>
+        <p>Manager, Inventory, and Marketing each sign off sequentially</p>
+      </div>
+      <div class="tl-step reveal delay-1" role="listitem">
+        <div class="tl-num" aria-label="Step 5">5</div>
+        <h3>Job Order</h3>
+        <p>Manager creates Job Order and attaches or flags the Purchase Order</p>
+      </div>
+      <div class="tl-step reveal delay-2" role="listitem">
+        <div class="tl-num" aria-label="Step 6">6</div>
+        <h3>Completion</h3>
+        <p>Technician finishes work, uploads proof photos, closes the order</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER CTA ─────────────────────────────────────────── -->
+  <footer class="section footer reveal">
+    <p>Built with ASP.NET Core 8, SQL Server, and 6 integrated frontend libraries.</p>
+    <div class="footer-btns">
+      <a class="btn btn-primary" href="https://github.com/Lunara16" target="_blank" rel="noreferrer">View Source on GitHub</a>
+      <a class="btn btn-ghost" href="./admin-demo.html" target="_blank" rel="noreferrer">Live Admin Demo →</a>
+      <a class="btn btn-ghost" href="./index.html">← Back to CV</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="showcase.js"></script>
+</body>
+</html>
